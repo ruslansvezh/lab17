@@ -1,0 +1,68 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+	int N, B = 0, k=0, d=0, buf=0, p=0,x=0;
+	cout << "Введите кол-во элментов массива :  " << endl;
+	cin >> N;
+	cout << "Введите элементы массива: " << endl;
+	int* arr = new int[N];
+	for (int i = 0; i < N; i++)
+	{
+		cin >> arr[i];
+	}
+	for (int i = 0; i < N; i++)
+	{
+			if (arr[i] != arr[i+1])
+			{
+				B++;
+			}
+	}
+
+	int* arrB = new int[B];
+	for (x; x < B; x++)
+	{
+		arrB[x] = 1;
+	}
+	x = 0;
+	for (int i = 0; i < N - 1; i++)
+	{
+		if (arr[i] == arr[i + 1])
+		{
+			arrB[x] = arrB[x] + 1;
+		}
+		else
+		{
+			x++;
+		}
+	}
+
+	int* arrC = new int [B];
+	for (int i = 0; i < B; i++)
+	{
+		arrC[i] = 0;
+	}
+	for (int i = 0; i < N; i++)
+	{
+		if (arr[i] != arr[i + 1])
+		{
+			
+			arrC[k] = arr[i];
+			k++;
+
+	    }
+	}
+	
+	cout << "Массив с длиной серии: " << endl;
+	for (int i = 0; i < B; i++)
+	{
+		cout << arrB[i] << endl;
+	}
+	cout << "Массив со значением элементов серии: " << endl;
+	for (int i = 0; i < B; i++)
+	{
+		cout << arrC[i] << endl;
+	}
+}
